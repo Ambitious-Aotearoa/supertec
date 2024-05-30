@@ -1,0 +1,58 @@
+$body-font: 'helveticanowdisplay_regularRg', serif;
+$header-light: 'helvetica_now_displaylight', serif;
+$header-font: "tenon", sans-serif;
+
+$xs:20px;
+$sm:40px;
+$md:3vw;
+$base:6vw;
+$lg:8vw;
+$xlg:15vw;
+$xxl:20vw;
+
+
+$bp-small: 48em; // 768px
+$bp-medium: 64em; // 1024px
+$bp-desktop: 85.375em; // 1366px
+$bp-figma:94em;
+$bp-large: 120em; 
+$bp-retina: 220em; 
+
+// Media Queries
+$mq-small: "(min-width: #{$bp-small})";
+$mq-medium: "(min-width: #{$bp-medium})";
+$mq-desktop: "(min-width: #{$bp-desktop})";
+$mq-figma: "(min-width: #{$bp-figma})";
+$mq-large: "(min-width: #{$bp-large})";
+$mq-retina: "(min-width: #{$bp-retina})";
+
+// Font-Size
+$base-font-size: 1em;
+
+// Line-Height
+$base-line-height: 1.2;
+$header-line-height: .95;
+
+// Spacing
+$base-spacing: $base-font-size;
+
+// Colors
+$white:#fff;
+$light:#F6F2EA;
+$dark:#000;
+$base-accent-color: #E3EC42;
+$alt-accent-color:#9F89E9;
+
+
+
+
+// Transition Settings
+$base-transition-duration: .3s;
+$base-transition-timing: ease-in-out;
+
+// Backgrounds
+$base-background-color:$white;
+
+$shadow:0 14px 28px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.16);
+$text-shadow: 2px 2px 10px rgba(0,0,0,0.25);
+$drop-shadow:drop-shadow( 3px 3px 8px rgba(0, 0, 0, .30));

@@ -1,0 +1,42 @@
+//background-images
+@mixin bg-img-pos($background-position:50% 50%, $background-size:cover) {
+  background: {
+    repeat: no-repeat;
+    position: $background-position;
+    size: $background-size;
+  }
+}
+
+
+@mixin bg-img($image, $background-position:50% 50%, $background-size:cover) {
+  background: {
+    image: $image;
+    repeat: no-repeat;
+    position: $background-position;
+    size: $background-size;
+  }
+}
+
+@mixin after( $zindex){
+  content: '';
+  position: absolute;
+  z-index: $zindex;
+
+}
+// @include after(100%, 6vw, $white, 1)
+
+
+@mixin transition($property:all, $duration:.2s, $function: ease-in){
+transition-property:$property;
+transition-duration: $duration;
+transition-timing-function: $function;
+}
+
+// @include transition();
+
+@mixin bg-mask($image, $background-position:center center, $background-size:contain) {
+-webkit-mask: $image;
+-webkit-mask-position: $background-position;
+-webkit-mask-size: $background-size;
+-webkit-mask-repeat: no-repeat;
+}

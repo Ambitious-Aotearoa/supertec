@@ -1,0 +1,792 @@
+@import 'variables';
+@import 'mixins';
+@import url("https://use.typekit.net/hjd0pcn.css");
+
+@font-face {
+    font-family: 'helvetica_now_displaylight';
+    src: url('../fonts/helveticanowdisplay-light-webfont.woff2') format('woff2'),
+         url('..fonts/helveticanowdisplay-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+
+}
+
+@font-face {
+    font-family: 'helveticanowdisplay_regularRg';
+    src: url('../fonts/helveticanowdisplay-regular-webfont.woff2') format('woff2'),
+         url('../fonts/helveticanowdisplay-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+*,
+*::before {
+  box-sizing: border-box;
+}
+
+
+body {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden; 
+  background-color: $light;
+  color: $dark;
+  font-family: $body-font;
+  font-weight: 400;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  opacity: 1;
+  @media #{$mq-retina} {
+    font-size: $base-font-size*2;
+  }
+}
+
+.body-wrapper{
+    @include transition;
+    padding-top:100px;
+    @media #{$mq-medium}{
+        padding-top: 130px;
+    }
+}
+
+
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+ p {
+  margin: 0 0 $base-spacing;
+  text-wrap: pretty;
+}
+a{
+    text-decoration: none;
+    color:$dark
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+  line-height: $header-line-height;
+  font-family: $header-font;
+  margin: 0;
+  font-weight: 400;
+
+}
+
+h1{
+    font-size: calc($base-font-size*4.5); 
+    margin-bottom:$sm;
+    font-weight:500;
+}
+h2{
+    font-size: calc($base-font-size*2.5);
+}
+h3{
+    font-size: calc($base-font-size*2.1); 
+    line-height:1em;
+    font-weight: 500;
+    margin-bottom: $base-font-size*.7;
+}
+
+
+.large-p{
+    font-size: calc($base-font-size*1.7);
+    line-height: 1.1em;
+}
+
+@media #{$mq-small} {
+    h1{font-size: calc($base-font-size*8.9);}
+    h2{font-size: calc($base-font-size*6.25);}
+    .large-p{
+        font-size: calc($base-font-size*1.9);
+    }
+}
+@media #{$mq-medium} {
+    h1{font-size: calc($base-font-size*5.8);}
+    h2{font-size: calc($base-font-size*4.8);}
+}
+@media #{$mq-desktop} {
+    h1{font-size: calc($base-font-size*8);}
+    h2{font-size: calc($base-font-size*6.25);}
+}
+@media #{$mq-figma} {
+    h1{font-size: calc($base-font-size*9.2);}
+}
+@media #{$mq-large} {
+    h1{font-size: calc($base-font-size*11.2);}
+}
+
+
+.text-center{
+    text-align: center;
+  }
+  
+  .text-right{
+    text-align: right;
+  }
+  
+
+.btn{
+    display: flex;
+    a{
+        background-color: $base-accent-color;
+        padding: $base-font-size*.6 $base-font-size*1.5;
+        color: $dark;
+        text-decoration: none;
+        border-radius: 6vw;
+        &:hover{
+            @include transition;
+            background-color: $white;
+        }
+    }
+
+}
+button{
+    border:none;
+    display: flex;
+    border-radius: 6vw; 
+    background-color: $dark;
+    padding: $base-font-size*.6 $base-font-size*1.5;
+    color: $white;
+    font-size: $base-font-size;
+    line-height: 1em;
+    &:hover{
+        @include transition;
+        background-color: $base-accent-color;
+        color: $dark;
+    }
+}
+  
+.dark{
+    background-color: $dark;
+    h1,h2,h3,h4,h5,h6{
+        color:$base-accent-color;
+    }
+    p, input, textarea, select{
+        color:$white;
+    }
+  }
+
+  .accent{
+    background-color: $base-accent-color;;
+    h1,h2,h3,h4,h5,h6{
+        color:$dark
+    }
+    .dark p{
+        color:$white
+    }
+    p, input, textarea, select{
+        color:$dark
+    }
+
+  }
+
+
+
+/**
+ * image related
+ */
+
+figure{
+    margin: 0;
+}
+img {
+  width:100%;
+}
+
+.img-fit{
+    width: 100%;
+    height:100vw;
+    object-fit: cover;
+    @media #{$mq-medium}{
+        height: 40vw;
+    }
+}
+
+
+.bg-cover{
+  @include bg-img-pos(50% 50%, cover);
+  min-height:300px
+}
+
+
+svg {
+  overflow: visible !important;
+  z-index: 1;
+}
+
+
+/**
+ * width, padding and wrappers
+ */
+
+
+
+
+.pad-all{
+  padding:$base-font-size*3.76 $base-font-size*1.88;
+}
+
+.pad-sides{
+  padding-left:$base-font-size*1.88;
+  padding-right:$base-font-size*1.88;
+
+  @media #{$mq-medium} {
+    &.no-left{
+      padding-left:0
+    }
+    &.no-right{
+      padding-right:0
+    }
+  }
+}
+
+.pad-top{
+  padding-top: $base-font-size*3.76
+}
+
+.pad-btm{
+  padding-bottom: $base-font-size*3.76
+}
+
+
+
+
+
+/**
+ * flex
+ */
+.flex-wrap{
+  display: flex;
+  flex-direction:column;
+  &.wrap{
+    flex-wrap: wrap;
+    flex-direction:row;
+  }
+  @media #{$mq-medium} {
+    .half{
+      flex:1;
+      flex-basis: 50%;
+      &.grow-vis{
+        flex-basis: 65%;
+      }
+    }
+
+    .third{
+      flex:1;
+      flex-basis: 33.33%;
+    }
+    &.col{
+        flex-direction: column;
+    }
+    flex-direction:row;
+  }
+}
+
+
+
+.cont-just-end,
+.just-cont-center-row,
+.img-align-item-center,
+.cont-align-end,
+.just-cont-center,
+.just-cont-between,
+.align-items-center,
+.img-align-end{
+  display: flex;
+  
+}
+
+.img-align-end{
+  align-items: flex-end;
+}
+
+.img-align-item-center{
+  align-items: center;
+}
+
+.cont-align-end{
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.cont-just-end{
+  justify-content: flex-end;
+}
+.just-cont-between{
+  flex-direction: column;
+  justify-content: space-between;
+}
+.just-cont-center{
+  flex-direction: column;
+  justify-content: center;
+}
+.just-cont-center-row{
+  justify-content: center;
+}
+
+.align-items-center{
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+
+//////////////////////////
+.hero{
+    .content{
+        position: relative;
+        h2{
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            width: calc(100vw - 60px);
+            height:calc(100vh - 60px);
+            .special{
+                position: absolute; 
+                width: calc(100vw - 60px);
+                bottom: 0px;
+                right: 0;
+                text-align: right;
+            }
+        }
+    }
+
+    .bg{
+        .svg-wrap,
+        .img-fit{
+            height: 50vh;
+        }
+        .svg-wrap{
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            z-index: 1;
+            img{
+                width: unset;
+                height: 80%;
+                margin-bottom: -20vh;
+            }
+        }
+    }
+
+    @media #{$mq-medium}{
+        .content{
+            h2{
+                height:calc(80vh - 60px);
+            }
+        }
+        .bg{
+            .svg-wrap,
+            .img-fit{
+                height: 80vh;
+            }
+            .svg-wrap{
+                justify-content: flex-end;
+                img{
+                    margin-bottom: 10vh;
+                    height: 60%;
+                    margin-right: -15vh;
+
+                }
+            }
+        
+        }
+    }
+    @media #{$mq-desktop}{
+        .bg{
+            .svg-wrap{
+                img{
+                    margin-bottom: 10vh;
+                    height: 70%;
+                    margin-right: -20vh;
+
+                }
+            }
+        
+        }
+    }
+
+
+}
+
+.hero-intro{
+    .copy-content{
+        .btn {
+            margin-top: $base-font-size;
+        }
+    }
+
+    @media #{$mq-medium}{
+        .large-p{
+            margin-bottom: 0;
+            font-family: $header-font;
+            margin-right:$base-font-size*1.2;
+        }
+        .copy-content{
+            padding-left:$base-font-size*1.5;
+            display: flex;
+            flex-direction: column;
+            .btn{
+                align-items: flex-end;
+            }
+        }
+    }
+
+    @media #{$mq-desktop}{
+        .large-p{
+            margin-right:$base-font-size*1.5;
+        }
+        .copy-content{
+            flex-direction: row;
+            .btn{
+                margin-top: 0;
+                align-items: flex-start;
+                justify-content: flex-end;
+            }
+        }
+    }
+    @media #{$mq-figma}{
+        .large-p{
+            max-width: 85%;
+        }
+        .copy-content{
+            p{
+                max-width:17vw;
+            }
+        }
+    }
+}
+
+.founder-intro{
+    &.border-top{
+        border-top:1px solid $white;
+    }
+    p.yellow{
+        color:$base-accent-color;
+    }
+    .small-p{
+        font-family: $header-font;
+        font-size:$base-font-size*1.5;
+        letter-spacing: -0.4px;
+        margin-bottom: 0;
+    }
+
+    .large-p{
+        font-family: $header-light;
+        font-size: $base-font-size*2;
+        margin-top:$base-font-size;
+        margin-bottom: $base-font-size*2;
+        font-weight: 300;
+       
+    }
+    img{
+        width: 25vw;
+    }
+
+
+        .medium-p{
+            font-size: $base-font-size*2.8;
+            font-weight: 500;
+            font-family: $header-font;
+            line-height: 1em;
+        }
+    
+
+    @media #{$mq-small}{
+        .large-p{
+            max-width: 95%;
+            font-size: $base-font-size*3.4;
+        }
+    }
+
+    @media #{$mq-desktop}{
+        .large-p{
+            max-width: 85%;
+        }
+        img{
+            width: 12vw;
+        }
+        .medium-p{
+            font-size: $base-font-size*3.2;
+        }
+    }
+    @media #{$mq-figma}{
+        img{
+            width: 10vw;
+        }
+        .large-p{
+            max-width: 75%;
+        }
+    }
+
+}
+
+.supertec{
+    .large-p{
+        font-size: $base-font-size*2.2;
+    }
+    p:not(.large-p){
+        margin-left: 15%;
+    }
+
+    @media #{$mq-medium}{
+        p:not(.large-p){
+            max-width: 36%;
+            margin-right: 0;
+            margin-left: auto;
+        }
+    }
+    @media #{$mq-figma}{
+        p:not(.large-p){
+            max-width: 25%;
+        }
+    }
+}
+
+.style-one{
+    border-top: 1px solid $dark;
+    padding-bottom: $base-font-size*1.88;
+    &.other{
+        padding-top:$base-font-size*1.88;
+    }
+    div{
+        position: relative;
+        width: 100%;
+        p{
+            margin-bottom: $base-font-size*2;
+        }
+    }
+    .svg-detail{
+        position: absolute;
+        width: 20%;
+        bottom: $base-font-size;
+        right:$base-font-size;
+    }
+
+    @media #{$mq-medium}{
+        div:first-of-type{
+            width: 35%;
+            padding-right: $base-font-size;
+        }
+    }
+    @media #{$mq-desktop}{
+        div:first-of-type{
+            width: 33%;
+            padding-right: 6%;
+        }
+    }
+    @media #{$mq-figma}{
+        div:first-of-type{
+            padding-right: 10%;
+        }
+    }
+}
+
+
+.style-two{
+    &.border-top{
+        border-top:1px solid $dark;
+    }
+    &.no-right{
+        padding-right: 0;
+    }
+    .dark{
+        padding:$base-font-size*1.88;
+        display:flex;
+        flex-direction:row-reverse;
+        justify-content: space-between;
+        border-bottom: 1px solid $base-accent-color;
+        width: 100%;
+    }
+    .small-p{
+        padding-top: 25%;
+        font-size:$base-font-size*1.5;
+    }
+    p{
+        padding-right: $base-font-size;
+    }
+    img{
+        min-width: 80px;
+    }
+
+    @media #{$mq-small}{
+        .dark{
+            width: 50%;
+            flex-basis: 50%;
+            border-left: 1px solid $base-accent-color;
+        }
+    }
+    @media #{$mq-medium}{
+        .dark{
+            width: 33.33%;
+            flex-basis: 33.33%;
+            flex-direction: column;
+        }
+        p{
+            padding-right: 0;
+        }
+        figure{
+            text-align: right;
+        }
+        img{
+            max-width: 30%;
+        }
+        .small-p{
+            padding-top: $base-font-size;
+        }
+    }
+    @media #{$mq-desktop}{
+        h2{
+            max-width: 80%;
+        }
+       div.half{
+        max-width: 50%;
+       }
+    }
+    @media #{$mq-figma}{
+        img{
+            max-width: 20%;
+        }
+     }
+}
+
+.banner{
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    img{
+        flex-basis:50%;
+        margin-bottom: $base-font-size;
+        padding:0 10px
+    }
+
+    @media #{$mq-small}{
+        img{
+            flex-basis:25%;
+        }
+    }
+    @media #{$mq-desktop}{
+        flex-wrap: nowrap;
+        img{
+            flex-basis:unset;
+        }
+        img:last-of-type{
+            margin-right:0
+        }
+    }
+
+}
+
+
+
+
+
+
+
+.form-wrapper{
+    background-color: #fff;
+    .flex-wrap{
+        margin-top:$base-font-size*2;
+        padding:$base-font-size;
+    }
+
+    form{
+        div{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: $base-font-size*2;
+        }
+        input, textarea{
+            border:none;
+            border-bottom: 1px solid #D4D4D4;
+            padding: $base-font-size;
+            &:focus-visible{
+                outline-color: $base-accent-color;
+            }
+        }
+    }
+
+    @media #{$mq-desktop}{
+        form{
+            max-width: 80%;
+        }
+        h2{
+            max-width: 80%;
+        }
+    }
+}
+
+
+
+footer{
+    h3{
+        margin-top:$base-font-size;
+    }
+    .btn{
+        a{
+            background-color: $dark;
+            color: $white;
+        }
+    }
+    .border-top.flex-wrap{
+        justify-content: space-between;
+        border-top:1px solid $dark;
+        padding-top:$base-font-size;
+        margin-top:6vw;
+        a{
+            margin-right:$base-font-size;
+        }
+    }
+    .half.right{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        text-align: right;
+    }
+
+
+    .bottom-nav{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        .flex-wrap{
+            display: flex;
+            flex-direction: column;
+            p{
+                margin-bottom: 0;
+            }
+            a{
+                margin-bottom: $base-font-size;
+            }
+        }
+    }
+
+    @media #{$mq-small}{
+        h3{
+            font-size:$base-font-size*3.2;
+        }
+
+        .bottom-nav{
+            .flex-wrap{
+                flex-direction: row;
+                a{
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+}
