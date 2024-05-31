@@ -7,10 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0" />
     <title>Supertec</title>
     <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+
     <link rel="stylesheet" type="text/css" href="styles/styles.css" />
   </head>
 
   <body>
+    <nav class="dark">
+      <div class="mobile-nav">
+        <a href="/" class="mobile-logo">
+          <img src="images/logo-text-white.svg" alt="" />
+        </a>
+        <div class="hamburger">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+      <div class="desktop-nav">
+        <div class="nav-links-wrapper">
+          <ul class="links">
+            <li class="link">
+              <a href="#about-us">About Us</a>
+            </li>
+            <li>
+              <a href="#benefits">Benefits</a>
+            </li>
+            <li class="logo">
+              <a href="/"> <img src="images/logo-text-white.svg" alt="" /></a>
+            </li>
+            <li>
+              <a href="#testimonials">Testimonials</a>
+            </li>
+            <li>
+              <a href="#contact">Contact us</a>
+            </li>
+          </ul>
+          <box-icon name="hot"></box-icon>
+        </div>
+      </div>
+    </nav>
+
     <main>
       <div class="dark hero">
         <div class="content">
@@ -58,7 +92,7 @@
         </figure>
       </div>
 
-      <div class="accent supertec pad-all">
+      <div class="accent supertec pad-all" id="about-us">
         <div>
           <p class="large-p">Your singular <br />Superannuation <br />management tool</p>
           <h1>Why choose Supertec?</h1>
@@ -88,7 +122,7 @@
         </div>
       </div>
 
-      <div class="accent pad-all style-two border-top">
+      <div class="accent pad-all style-two border-top" id="benefits">
         <div>
           <h2>Software that puts the power back in your hands</h2>
         </div>
@@ -159,7 +193,7 @@
         </div>
       </div>
 
-      <div class="pad-all founder-intro second flex-wrap">
+      <div class="pad-all founder-intro second flex-wrap light" id="testimonials">
         <div>
           <p class="medium-p">
             New Zealand’s <br />
@@ -174,7 +208,7 @@
         </figure>
       </div>
 
-      <div class="flex-wrap banner pad-all">
+      <div class="flex-wrap banner pad-all light">
         <img src="images/placeholder.svg" alt="Customer-logo" />
         <img src="images/placeholder.svg" alt="Customer-logo" />
         <img src="images/placeholder.svg" alt="Customer-logo" />
@@ -185,7 +219,7 @@
         <img src="images/placeholder.svg" alt="Customer-logo" />
       </div>
 
-      <div class="pad-all">
+      <div class="pad-all light" id="contact">
         <div class="form-wrapper pad-all">
           <div>
             <h2>Enquire now for a free demonstration </h2>
@@ -228,7 +262,7 @@
         </div>
       </div>
     </main>
-    <footer class="pad-all">
+    <footer class="pad-all light">
       <div class="flex-wrap">
         <figure class="half logo">
           <svg xmlns="http://www.w3.org/2000/svg" width="293" height="247" viewBox="0 0 293 247" fill="none">
@@ -259,5 +293,8 @@
         </div>
       </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://kit.fontawesome.com/b3510dc66a.js" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

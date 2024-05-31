@@ -33,8 +33,8 @@ body {
   height: 100%;
   margin: 0;
   overflow-x: hidden; 
-  background-color: $light;
-  color: $dark;
+  background-color: $dark;
+  color: $white;
   font-family: $body-font;
   font-weight: 400;
   font-size: $base-font-size;
@@ -173,6 +173,7 @@ button{
     h1,h2,h3,h4,h5,h6{
         color:$base-accent-color;
     }
+    ul li a,
     p, input, textarea, select{
         color:$white;
     }
@@ -190,6 +191,18 @@ button{
         color:$dark
     }
 
+  }
+
+  .light{
+    background-color: $light;
+    color:$dark;
+    h1,h2,h3,h4,h5,h6{
+        color:$dark;
+    }
+    ul li a,
+    p, input, textarea, select{
+        color:$dark;
+    }
   }
 
 
@@ -342,9 +355,86 @@ svg {
   width: 100%;
 }
 
+/////////
+/// 
+/// 
+nav{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top:0;
+    z-index: 5;
+    font-size: $base-font-size*2;
+    .fa-bars{
+        color:$white;
+    }
+
+    .mobile-nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $dark;
+        padding: $base-font-size*.5;
+        z-index: 5;
+        position: relative;
+    }
+
+    .desktop-nav{
+        padding: $base-font-size;
+        position: fixed;
+        left: 0;
+        top: -100%;
+        display: block;
+        width: 100%;
+        transition: all 0.5s ease;
+        background-color: $dark;
+        z-index: 3;
+
+        ul{
+            padding:0;
+            margin: 0;
+            width: 100%;
+            .logo{
+                display:none;
+            }
+            li{
+                padding: $base-font-size 0;
+            }
+        }
+    }
+
+    @media #{$mq-small}{
+        font-size: $base-font-size;
+        height: 0;
+        .mobile-nav{
+            display:none;
+        }
+        .desktop-nav{
+           position: relative;
+           top:0;
+            ul {
+                display:flex;
+                justify-content: space-between;
+                align-items: center;
+                .logo{
+                    display:block;
+                }
+                li{
+                    padding:0 $base-font-size ;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+
 
 //////////////////////////
 .hero{
+    padding-top:$base-font-size*4;
     .content{
         position: relative;
         h2{
@@ -352,7 +442,7 @@ svg {
             left: 30px;
             top: 30px;
             width: calc(100vw - 60px);
-            height:calc(100vh - 60px);
+            height:calc(100vh - 60px - 120px);
             .special{
                 position: absolute; 
                 width: calc(100vw - 60px);
@@ -366,7 +456,7 @@ svg {
     .bg{
         .svg-wrap,
         .img-fit{
-            height: 50vh;
+            height: calc(50vh - 60px)
         }
         .svg-wrap{
             display: flex;
@@ -690,11 +780,6 @@ svg {
 }
 
 
-
-
-
-
-
 .form-wrapper{
     background-color: #fff;
     .flex-wrap{
@@ -727,7 +812,6 @@ svg {
         }
     }
 }
-
 
 
 footer{
@@ -790,3 +874,7 @@ footer{
     }
 
 }
+
+
+
+
