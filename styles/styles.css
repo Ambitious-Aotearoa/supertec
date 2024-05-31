@@ -450,11 +450,14 @@ nav .desktop-nav ul li {
   right: 0;
   text-align: right;
 }
+.hero .bg {
+  background: red;
+}
 .hero .bg .img-fit {
-  height: 60svh;
+  height: 50svh;
 }
 .hero .bg .svg-wrap {
-  height: 40svh;
+  height: calc(50svh - 60px);
   display: flex;
   align-items: flex-end;
   justify-content: center;

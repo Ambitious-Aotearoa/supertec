@@ -443,6 +443,7 @@ nav{
 //////////////////////////
 .hero{
     padding-top:$base-font-size*4;
+    
     .content{
         position: relative;
         h2{
@@ -462,12 +463,13 @@ nav{
     }
 
     .bg{
+        background: red;
         .img-fit{
-            height:60svh
+            height:50svh
         }
 
         .svg-wrap{
-            height:40svh;
+            height:calc(50svh - 60px);
             display: flex;
             align-items: flex-end;
             justify-content: center;
