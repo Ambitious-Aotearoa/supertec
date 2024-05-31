@@ -90,7 +90,7 @@ h1{
     font-weight:500;
 }
 h2{
-    font-size: calc($base-font-size*2.5);
+    font-size: calc($base-font-size*2.4);
 }
 h3{
     font-size: calc($base-font-size*2.1); 
@@ -476,7 +476,7 @@ nav{
             img{
                 width: unset;
                 height: 80%;
-                margin-bottom: -20vh;
+                margin-bottom: -20svh;
             }
         }
     }
@@ -794,7 +794,6 @@ nav{
     background-color: #fff;
     .flex-wrap{
         margin-top:$base-font-size*2;
-        padding:$base-font-size;
     }
 
     form{
@@ -815,6 +814,9 @@ nav{
     }
 
     @media #{$mq-medium}{
+        .flex-wrap{
+            padding:$base-font-size;
+        }
         form{
             margin-bottom:0;
             max-width: 80%;
