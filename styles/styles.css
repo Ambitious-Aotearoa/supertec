@@ -365,9 +365,6 @@ nav {
   z-index: 5;
   font-size: 2em;
 }
-nav .fa-bars {
-  color: #fff;
-}
 nav .mobile-nav {
   display: flex;
   justify-content: space-between;
@@ -428,6 +425,18 @@ nav .desktop-nav ul li {
   nav .desktop-nav ul li {
     padding: 0 1em;
   }
+}
+nav .hamburger svg {
+  stroke: #fff;
+}
+nav .hamburger.active .middle {
+  display: none;
+}
+nav .hamburger.active .top {
+  transform: rotate(45deg) translateX(1px) translateY(-5px) scale(1.1);
+}
+nav .hamburger.active .bottom {
+  transform: rotate(-45deg) translateX(-12px) translateY(-5px) scale(1.1);
 }
 
 .hero {

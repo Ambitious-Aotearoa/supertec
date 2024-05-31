@@ -5,8 +5,10 @@ let menuOpenBtn = document.querySelector('.hamburger')
 function toggleMenu() {
   if (navLinks.classList.contains('active')) {
     navLinks.classList.remove('active')
+    menuOpenBtn.classList.remove('active')
   } else {
     navLinks.classList.add('active')
+    menuOpenBtn.classList.add('active')
   }
 }
 menuOpenBtn.addEventListener('click', toggleMenu)
@@ -15,6 +17,7 @@ menuOpenBtn.addEventListener('click', toggleMenu)
 function closeMenu(event) {
   if (!navLinks.contains(event.target) && !menuOpenBtn.contains(event.target)) {
     navLinks.classList.remove('active')
+    menuOpenBtn.classList.remove('active')
   }
 }
 document.addEventListener('touchstart', closeMenu)
@@ -28,6 +31,7 @@ navAnchors.forEach((anchor) => {
     event.preventDefault()
     // Remove active class from navLinks/close nav
     navLinks.classList.remove('active')
+    menuOpenBtn.classList.remove('active')
   })
 })
 
@@ -56,6 +60,7 @@ function toggleMobileNav() {
   if (window.innerWidth > 768) {
     console.log('desktop')
     navLinks.classList.remove('active')
+    menuOpenBtn.classList.remove('active')
   } else {
     console.log('mobile')
   }
