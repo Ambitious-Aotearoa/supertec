@@ -387,6 +387,9 @@ nav .desktop-nav {
   background-color: #000;
   z-index: 3;
 }
+nav .desktop-nav.active {
+  top: 70px;
+}
 nav .desktop-nav ul {
   padding: 0;
   margin: 0;
