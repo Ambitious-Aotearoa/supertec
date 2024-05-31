@@ -159,6 +159,7 @@ h3 {
   transition-duration: 0.2s;
   transition-timing-function: ease-in;
   background-color: #fff;
+  color: #000;
 }
 
 button {

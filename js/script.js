@@ -26,21 +26,27 @@ let navAnchors = navLinks.querySelectorAll('a')
 navAnchors.forEach((anchor) => {
   anchor.addEventListener('click', function (event) {
     event.preventDefault()
+    // Remove active class from navLinks/close nav
+    navLinks.classList.remove('active')
+  })
+})
 
-    // Smooth scroll with offset
-    //substring removes hash
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener('click', function (event) {
+    event.preventDefault()
+
     let targetId = this.getAttribute('href').substring(1)
     let targetElement = document.getElementById(targetId)
 
-    // Remove active class from navLinks/close nav
-    navLinks.classList.remove('active')
-
-    setTimeout(() => {
+    if (targetElement) {
+      // Smooth scroll with offset
+      let offset = 60 // You can adjust this offset as needed
+      let targetOffsetTop = targetElement.getBoundingClientRect().top + window.scrollY
       window.scrollTo({
-        top: targetElement.offsetTop - 60,
+        top: targetOffsetTop - offset,
         behavior: 'smooth',
       })
-    }, 300)
+    }
   })
 })
 

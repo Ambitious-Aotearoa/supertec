@@ -148,10 +148,13 @@ h3{
         &:hover{
             @include transition;
             background-color: $white;
+            color:$dark;
         }
     }
 
 }
+
+
 button{
     border:none;
     display: flex;
