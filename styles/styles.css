@@ -467,11 +467,11 @@ nav .desktop-nav ul li {
 }
 @media (min-width: 64em) {
   .hero .content h2 {
-    height: calc(80vh - 60px);
+    height: calc(100vh - 130px);
   }
   .hero .bg .svg-wrap,
   .hero .bg .img-fit {
-    height: 80vh;
+    height: calc(100vh - 66px);
   }
   .hero .bg .svg-wrap {
     justify-content: flex-end;
@@ -739,6 +739,9 @@ nav .desktop-nav ul li {
   margin-top: 2em;
   padding: 1em;
 }
+.form-wrapper form {
+  margin-bottom: 3em;
+}
 .form-wrapper form div {
   display: flex;
   flex-direction: column;
@@ -752,8 +755,9 @@ nav .desktop-nav ul li {
 .form-wrapper form input:focus-visible, .form-wrapper form textarea:focus-visible {
   outline-color: #E3EC42;
 }
-@media (min-width: 85.375em) {
+@media (min-width: 64em) {
   .form-wrapper form {
+    margin-bottom: 0;
     max-width: 80%;
   }
   .form-wrapper h2 {

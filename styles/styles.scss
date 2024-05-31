@@ -484,13 +484,13 @@ nav{
     @media #{$mq-medium}{
         .content{
             h2{
-                height:calc(80vh - 60px);
+                height:calc(100vh - 130px);
             }
         }
         .bg{
             .svg-wrap,
             .img-fit{
-                height: 80vh;
+                height:calc(100vh - 66px);
             }
             .svg-wrap{
                 justify-content: flex-end;
@@ -798,6 +798,7 @@ nav{
     }
 
     form{
+        margin-bottom: $base-font-size*3;
         div{
             display: flex;
             flex-direction: column;
@@ -813,8 +814,9 @@ nav{
         }
     }
 
-    @media #{$mq-desktop}{
+    @media #{$mq-medium}{
         form{
+            margin-bottom:0;
             max-width: 80%;
         }
         h2{
