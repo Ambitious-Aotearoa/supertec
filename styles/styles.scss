@@ -450,7 +450,7 @@ nav{
             left: 30px;
             top: 30px;
             width: calc(100vw - 60px);
-            height:calc(100vh - 60px - 120px);
+            height:calc(100svh - 60px - 120px);
             .special{
                 position: absolute; 
                 width: calc(100vw - 60px);
@@ -464,7 +464,7 @@ nav{
     .bg{
         .svg-wrap,
         .img-fit{
-            height: calc(50vh - 60px)
+            height: calc(50svh - 60px)
         }
         .svg-wrap{
             display: flex;
@@ -474,7 +474,7 @@ nav{
             img{
                 width: unset;
                 height: 80%;
-                margin-bottom: -20vh;
+                margin-bottom: -20svh;
             }
         }
     }
@@ -482,7 +482,7 @@ nav{
     @media #{$mq-medium}{
         .content{
             h2{
-                height:calc(80vh - 60px);
+                height:calc(80svh - 60px);
             }
         }
         .bg{
