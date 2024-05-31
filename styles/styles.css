@@ -386,8 +386,10 @@ nav .desktop-nav {
   transition: all 0.5s ease;
   background-color: #000;
   z-index: 3;
+  transition: top 0.3s linear;
 }
 nav .desktop-nav.active {
+  transition: top 0.3s linear;
   top: 70px;
 }
 nav .desktop-nav ul {
@@ -412,6 +414,7 @@ nav .desktop-nav ul li {
   nav .desktop-nav {
     position: relative;
     top: 0;
+    transition: top 0s linear;
   }
   nav .desktop-nav ul {
     display: flex;
