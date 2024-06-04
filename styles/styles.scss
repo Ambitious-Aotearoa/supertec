@@ -21,6 +21,15 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'helvetica_now_displaythin';
+    src: url('../fonts/helveticanowdisplay-thin-webfont.woff2') format('woff2'),
+         url('../fonts/helveticanowdisplay-thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 *,
 *::before {
   box-sizing: border-box;
@@ -85,15 +94,16 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1{
-    font-size: calc($base-font-size*4.5); 
+    font-size: calc($base-font-size*4.1); 
     margin-bottom:$sm;
     font-weight:500;
+    letter-spacing: -2.19px;
 }
 h2{
-    font-size: calc($base-font-size*2.4);
+    font-size:$base-font-size*3.5;
 }
 h3{
-    font-size: calc($base-font-size*2.1); 
+    font-size: calc($base-font-size*3.1); 
     line-height:1em;
     font-weight: 500;
     margin-bottom: $base-font-size*.7;
@@ -101,12 +111,12 @@ h3{
 
 
 .large-p{
-    font-size: calc($base-font-size*1.7);
-    line-height: 1.1em;
+    font-size: calc($base-font-size*1.8);
+    line-height: 1.05em;
 }
 
 @media #{$mq-small} {
-    h1{font-size: calc($base-font-size*8.9);}
+    h1{font-size: calc($base-font-size*8.5);}
     h2{font-size: calc($base-font-size*6.25);}
     .large-p{
         font-size: calc($base-font-size*1.9);
@@ -121,7 +131,8 @@ h3{
     h2{font-size: calc($base-font-size*6.25);}
 }
 @media #{$mq-figma} {
-    h1{font-size: calc($base-font-size*9.2);}
+    h1{font-size: calc($base-font-size*9.6);}
+
 }
 @media #{$mq-large} {
     h1{font-size: calc($base-font-size*11.2);}
@@ -251,7 +262,10 @@ svg {
 
 
 .pad-all{
-  padding:$base-font-size*3.76 $base-font-size*1.88;
+  padding:$base-font-size*3.76 20px;
+  @media #{$mq-medium} {
+    padding:$base-font-size*3.76 $base-font-size*1.88;
+  }
 }
 
 .pad-sides{
@@ -462,16 +476,20 @@ nav{
         position: relative;
         h2{
             position: absolute;
-            left: 30px;
+            left: 20px;
             top: 30px;
-            width: calc(100vw - 60px);
+            width: calc(100vw - 40px);
             height:calc(100svh - 60px - 60px);
+            // font-size:$base-font-size*3.5;
+            font-size:15vw;
+            font-weight:500;
             .special{
                 position: absolute; 
                 width: calc(100vw - 60px);
                 bottom: 0px;
                 right: 0;
                 text-align: right;
+                font-weight: 400;
             }
         }
     }
@@ -498,6 +516,7 @@ nav{
     @media #{$mq-medium}{
         .content{
             h2{
+                font-size:7.4vw;
                 height:calc(100vh - 130px);
             }
         }
@@ -541,11 +560,13 @@ nav{
             margin-top: $base-font-size;
         }
     }
+    .large-p{
+        font-family: $header-font;
+    }
 
     @media #{$mq-medium}{
         .large-p{
             margin-bottom: 0;
-            font-family: $header-font;
             margin-right:$base-font-size*1.2;
         }
         .copy-content{
@@ -599,7 +620,7 @@ nav{
 
     .large-p{
         font-family: $header-light;
-        font-size: $base-font-size*2;
+        font-size: $base-font-size*1.9;
         margin-top:$base-font-size;
         margin-bottom: $base-font-size*2;
         font-weight: 300;
@@ -610,12 +631,12 @@ nav{
     }
 
 
-        .medium-p{
-            font-size: $base-font-size*2.8;
-            font-weight: 500;
-            font-family: $header-font;
-            line-height: 1em;
-        }
+    .medium-p{
+        font-size: $base-font-size*3.1;
+        font-weight: 500;
+        font-family: $header-font;
+        line-height: 1em;
+    }
     
 
     @media #{$mq-small}{
@@ -643,16 +664,19 @@ nav{
         .large-p{
             max-width: 75%;
         }
+        .medium-p{
+            font-size: $base-font-size*3.8;
+        }
     }
 
 }
 
 .supertec{
     .large-p{
-        font-size: $base-font-size*2.2;
+        font-size: $base-font-size*2.5;
     }
     p:not(.large-p){
-        margin-left: 15%;
+        margin-left: 25%;
     }
 
     @media #{$mq-medium}{
@@ -664,7 +688,7 @@ nav{
     }
     @media #{$mq-figma}{
         p:not(.large-p){
-            max-width: 25%;
+            max-width: 20%;
         }
     }
 }
@@ -677,7 +701,7 @@ nav{
     }
     div{
         position: relative;
-        width: 100%;
+        // width: 100%;
         p{
             margin-bottom: $base-font-size*2;
         }
@@ -691,14 +715,20 @@ nav{
 
     @media #{$mq-medium}{
         div:first-of-type{
-            width: 35%;
-            padding-right: $base-font-size;
+            width: 40%;
+            flex-basis:40%;
+            padding-right: $base-font-size*4;
         }
     }
     @media #{$mq-desktop}{
         div:first-of-type{
-            width: 33%;
+            width: 30%;
+            flex-basis:30%;
             padding-right: 6%;
+        }
+        div{
+            width: 70%;
+            flex-basis:70%;
         }
     }
     @media #{$mq-figma}{
@@ -710,6 +740,10 @@ nav{
 
 
 .style-two{
+    h2{
+        font-weight: 500;
+        font-size:$base-font-size*4.2;
+    }
     &.border-top{
         border-top:1px solid $dark;
     }
@@ -717,20 +751,21 @@ nav{
         padding-right: 0;
     }
     .dark{
-        padding:$base-font-size*1.88;
+        padding:40px $base-font-size*1.6;
         display:flex;
         flex-direction:row-reverse;
         justify-content: space-between;
         border-bottom: 1px solid $base-accent-color;
         width: 100%;
+        div.half{
+            max-width: 50%;
+        }
     }
     .small-p{
-        padding-top: 25%;
-        font-size:$base-font-size*1.5;
+        padding-top: 43%;
+        font-size:$base-font-size*1.55;
     }
-    p{
-        padding-right: $base-font-size;
-    }
+
     img{
         min-width: 80px;
     }
@@ -747,6 +782,9 @@ nav{
             width: 33.33%;
             flex-basis: 33.33%;
             flex-direction: column;
+            div.half{
+                max-width: 60%;
+            }
         }
         p{
             padding-right: 0;
@@ -764,15 +802,22 @@ nav{
     @media #{$mq-desktop}{
         h2{
             max-width: 80%;
+            font-size:$base-font-size*5.3
         }
-       div.half{
+        .dark div.half{
         max-width: 50%;
        }
     }
     @media #{$mq-figma}{
+        h2{
+            max-width: 70%;
+        }
         img{
             max-width: 20%;
         }
+        .dark div.half{
+            max-width: 45%;
+           }
      }
 }
 
@@ -806,12 +851,17 @@ nav{
 
 .form-wrapper{
     background-color: #fff;
+    padding-left:30px;
+    padding-right:30px;
+    h2{
+        font-size:$base-font-size*2.6;
+    }
     .flex-wrap{
         margin-top:$base-font-size*2;
     }
 
     form{
-        margin-bottom: $base-font-size*3;
+        margin-bottom: $base-font-size*5;
         div{
             display: flex;
             flex-direction: column;
@@ -828,6 +878,8 @@ nav{
     }
 
     @media #{$mq-medium}{
+        padding-left:$base-font-size*3.1;
+        padding-right:$base-font-size*3.1;
         .flex-wrap{
             padding:$base-font-size;
         }
@@ -839,12 +891,29 @@ nav{
             max-width: 80%;
         }
     }
+    @media #{$mq-figma}{
+
+        h2{
+            max-width: 70%;
+            font-size:$base-font-size*5;
+            margin-bottom: $base-font-size;
+        }
+    }
 }
 
 
 footer{
+    &.pad-all{
+        padding-bottom: 40px;
+    }
+    .logo{
+        max-width: 200px;
+        svg{
+            width: 100%;
+        }
+    }
     h3{
-        margin-top:$base-font-size;
+        margin-top:$base-font-size*2;
     }
     .btn{
         a{
@@ -855,10 +924,10 @@ footer{
     .border-top.flex-wrap{
         justify-content: space-between;
         border-top:1px solid $dark;
-        padding-top:$base-font-size;
-        margin-top:6vw;
+        padding-top:$base-font-size*1.8;
+        margin-top:30vw;
         a{
-            margin-right:$base-font-size;
+            margin-left:$base-font-size;
         }
     }
     .half.right{
@@ -877,6 +946,7 @@ footer{
         .flex-wrap{
             display: flex;
             flex-direction: column;
+            text-align: right;
             p{
                 margin-bottom: 0;
             }
@@ -898,6 +968,22 @@ footer{
                     margin-bottom: 0;
                 }
             }
+        }
+    }
+    @media #{$mq-medium}{
+        h3{
+            margin-top:0;
+        }
+        .border-top.flex-wrap{
+            margin-top:6vw;
+            a{
+                margin-right:$base-font-size;
+            }
+        }
+    }
+    @media #{$mq-figma}{
+        .logo{
+            max-width: 300px;
         }
     }
 
