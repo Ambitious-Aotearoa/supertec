@@ -454,7 +454,7 @@ nav{
                 transform: rotate(45deg) translateX(1px) translateY(-5px) scale(1.1);
             }
             .bottom{
-                transform: rotate(-45deg) translateX(-12px) translateY(-5px) scale(1.1);
+                transform: rotate(-45deg) translateX(-11px) translateY(-5px) scale(1.1);
             }
         }
     }
@@ -704,27 +704,30 @@ nav{
         bottom: $base-font-size;
         right:$base-font-size;
     }
+    .content-text h3 div{
+        text-wrap: nowrap;
+    }
 
     @media #{$mq-medium}{
-        div:first-of-type{
+        .content-text{
             width: 40%;
             flex-basis:40%;
             padding-right: $base-font-size*4;
         }
     }
     @media #{$mq-desktop}{
-        div:first-of-type{
+        .content-text{
             width: 30%;
             flex-basis:30%;
             padding-right: 6%;
         }
-        div{
+        .img-content{
             width: 70%;
             flex-basis:70%;
         }
     }
     @media #{$mq-figma}{
-        div:first-of-type{
+        .content-text{
             padding-right: 10%;
         }
     }
