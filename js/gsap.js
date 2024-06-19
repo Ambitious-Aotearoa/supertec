@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         delay: 0.5,
         color: '#a4ad00',
         ease: 'back',
-        duration: 2,
+        duration: 3,
         stagger: 0.1,
       })
     })
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       defaults: { duration: 1, ease: 'none' },
       scrollTrigger: {
         trigger: '.circle',
-        start: 'top top',
+        start: 'top center',
         end: 'bottom top',
         toggleActions: 'restart none none reverse',
         //markers: marker,
