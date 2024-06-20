@@ -69,6 +69,7 @@ ul {
 p {
   margin: 0 0 1em;
   text-wrap: pretty;
+  line-height: 1.4em;
 }
 
 a {
@@ -149,6 +150,10 @@ h3 {
 
 .text-right {
   text-align: right;
+}
+
+.no-wrap {
+  text-wrap: nowrap;
 }
 
 .btn {
@@ -527,6 +532,7 @@ nav .hamburger.active .bottom {
 }
 .hero-intro .large-p {
   font-family: "tenon", sans-serif;
+  line-height: 1.2em;
 }
 @media (min-width: 64em) {
   .hero-intro .large-p {
@@ -764,15 +770,36 @@ nav .hamburger.active .bottom {
   }
 }
 
-.banner {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+/* marquee */
+.marquee {
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
 }
-.banner img {
+.marquee .marquee-carousel.marquee-carousel-1 {
+  margin-right: -300px;
   margin-bottom: 1em;
-  padding: 0 10px;
+}
+.marquee .marquee-carousel.marquee-carousel-2 {
+  margin-left: -300px;
+}
+.marquee .marquee-items {
+  -webkit-transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+  -moz-transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+  -o-transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+.marquee .marquee-items .marquee-item {
+  overflow: hidden;
+  margin-right: 1em;
+  min-width: 12vw;
+  display: flex;
+  align-items: center;
+  height: unset !important;
+  max-height: 4vw;
 }
 
 .form-wrapper {

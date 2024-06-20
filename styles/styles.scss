@@ -78,6 +78,7 @@ ul {
  p {
   margin: 0 0 $base-spacing;
   text-wrap: pretty;
+  line-height: 1.4em;
 }
 a{
     text-decoration: none;
@@ -145,6 +146,9 @@ h3{
   
   .text-right{
     text-align: right;
+  }
+  .no-wrap{
+    text-wrap: nowrap;
   }
   
 
@@ -559,6 +563,7 @@ nav{
     }
     .large-p{
         font-family: $header-font;
+        line-height: 1.2em;
     }
 
     @media #{$mq-medium}{
@@ -821,15 +826,40 @@ nav{
      }
 }
 
-.banner{
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    img{
-        margin-bottom: $base-font-size;
-        padding:0 10px
-    }
+/* marquee */
+.marquee {
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+
+  
+  .marquee-carousel.marquee-carousel-1 {
+    margin-right: -300px;
+    margin-bottom: 1em;
+  }
+  .marquee-carousel.marquee-carousel-2 {
+    margin-left: -300px;
+  }
+
+  .marquee-items {
+    -webkit-transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+    -moz-transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+    -o-transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+    display: flex;
+    position: relative;
+    width: 100%;
+    .marquee-item {
+        overflow: hidden;
+        margin-right: 1em;
+        min-width: 12vw;
+        display: flex;
+        align-items: center;
+        height:unset !important;
+        max-height: calc(12vw/3);
+      }
+  }
+  
 }
 
 
@@ -972,6 +1002,8 @@ footer{
     }
 
 }
+
+
 
 
 
