@@ -156,6 +156,7 @@ h3{
         color: $dark;
         text-decoration: none;
         border-radius: 6vw;
+        @include transition;
         &:hover{
             @include transition;
             background-color: $white;
@@ -414,6 +415,10 @@ nav{
             }
             li{
                 padding: $base-font-size 0;
+                a:hover{
+                    @include transition;
+                    color:$base-accent-color;
+                }
             }
         }
     }

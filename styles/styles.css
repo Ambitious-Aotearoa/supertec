@@ -160,6 +160,9 @@ h3 {
   color: #000;
   text-decoration: none;
   border-radius: 6vw;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
 }
 .btn a:hover {
   transition-property: all;
@@ -407,6 +410,12 @@ nav .desktop-nav ul .logo {
 }
 nav .desktop-nav ul li {
   padding: 1em 0;
+}
+nav .desktop-nav ul li a:hover {
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+  color: #E3EC42;
 }
 @media (min-width: 48em) {
   nav {
