@@ -394,6 +394,10 @@ nav{
         z-index: 5;
         position: relative;
     }
+    .logo a{
+        display: flex;
+        width:12vw;
+    }
 
     .desktop-nav{
         padding: $base-font-size;

@@ -389,6 +389,10 @@ nav .mobile-nav {
   z-index: 5;
   position: relative;
 }
+nav .logo a {
+  display: flex;
+  width: 12vw;
+}
 nav .desktop-nav {
   padding: 1em;
   position: fixed;

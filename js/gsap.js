@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     })
 
     tl.addLabel('start')
-    tl.from('svg', { rotate: 360 }, 'start')
+    tl.from('.hero-svg', { rotate: 360 }, 'start')
     tl.from('.crescent', { duration: 1.2, xPercent: 50, yPercent: -50 }, 'start')
     tl.from('.dots', { duration: 1.2, xPercent: -50, yPercent: 50 }, 'start')
   }
